@@ -37,3 +37,16 @@ try:
     print("Task 5:", SquareGenerator().generate_squares(10, 1))
 except ValueError as e:
     print("Task 5:", e)
+
+# Task 6: Modules
+# Create a new file named square_generator.py and move the SquareGenerator class there.
+
+filename = "square_generator.py"
+with open(filename, 'w') as file:
+    file.write("class SquareGenerator:\n")
+    file.write("    def generate_squares(self, start, end):\n")
+    file.write("        if end < start:\n")
+    file.write("            raise ValueError(\"End of range cannot be less than start\")\n")
+    file.write("        return [x**2 for x in range(start, end)]\n")
+
+print(f"Class 'SquareGenerator' moved to the file '{filename}' successfully.")
