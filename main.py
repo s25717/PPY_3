@@ -10,3 +10,9 @@ def generate_squares(start, end):
 
 print("Task 2:", generate_squares(1, 11))
 
+# Task 3: Classes
+class SquareGenerator:
+    def generate_squares(self, start, end):
+        return [x**2 for x in range(start, end)]
+
+print("Task 3:", SquareGenerator().generate_squares(1, 11))
