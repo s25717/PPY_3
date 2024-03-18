@@ -16,3 +16,12 @@ class SquareGenerator:
         return [x**2 for x in range(start, end)]
 
 print("Task 3:", SquareGenerator().generate_squares(1, 11))
+
+# Task 4: Libraries
+import math
+
+class SquareGenerator:
+    def generate_squares(self, start, end):
+        return [math.sqrt(x**2) for x in range(start, end)]
+
+print("Task 4:", SquareGenerator().generate_squares(1, 11))
