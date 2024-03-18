@@ -67,3 +67,44 @@ square_generator_file_path = "square_generator.py"
 os.rename(square_generator_file_path, os.path.join(package_directory, square_generator_file_path))
 
 print("Empty __init__.py file created and square_generator.py moved to the package directory.")
+
+class SquareGenerator:
+    def generate_squares(self, start, end):
+        if end < start:
+            raise ValueError("End of range cannot be less than start")
+        return [x**2 for x in range(start, end)]
+
+# Define the CubicGenerator class as a subclass of SquareGenerator
+class CubicGenerator(SquareGenerator):
+    def generate_cubes(self, start, end):
+        if end < start:
+            raise ValueError("End of range cannot be less than start")
+        return [x**3 for x in range(start, end)]
+
+# Test the CubicGenerator class
+cubic_gen = CubicGenerator()
+print("Cubes from 1 to 5:", cubic_gen.generate_cubes(1, 6))
+
+# Define the SquareGenerator class
+class SquareGenerator:
+    def generate_squares(self, start, end):
+        if end < start:
+            raise ValueError("End of range cannot be less than start")
+        return [x**2 for x in range(start, end)]
+
+# Define the CubicGenerator class as a subclass of SquareGenerator
+class CubicGenerator(SquareGenerator):
+    def generate_cubes(self, start, end):
+        if end < start:
+            raise ValueError("End of range cannot be less than start")
+        return [x**3 for x in range(start, end)]
+
+    # Override generate_squares method to generate squares
+    def generate_squares(sealf, start, end):
+        if end < start:
+            raise ValueError("End of range cannot be less than start")
+        return [x**2 for x in range(start, end)]
+
+# Test the CubicGenerator class
+cubic_gen = CubicGenerator()
+print("Squares from 1 to 5:", cubic_gen.generate_squares(1, 6))
