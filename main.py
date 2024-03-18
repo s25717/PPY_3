@@ -50,3 +50,20 @@ with open(filename, 'w') as file:
     file.write("        return [x**2 for x in range(start, end)]\n")
 
 print(f"Class 'SquareGenerator' moved to the file '{filename}' successfully.")
+
+# 7
+# Task 7: Packages
+# Specify the package directory
+package_directory = "square_package"
+if not os.path.exists(package_directory):
+    os.makedirs(package_directory)
+
+# Create an empty __init__.py file in the package directory
+init_file_path = os.path.join(package_directory, "__init__.py")
+open(init_file_path, 'a').close()
+
+# Move the square_generator.py file into the package directory
+square_generator_file_path = "square_generator.py"
+os.rename(square_generator_file_path, os.path.join(package_directory, square_generator_file_path))
+
+print("Empty __init__.py file created and square_generator.py moved to the package directory.")
